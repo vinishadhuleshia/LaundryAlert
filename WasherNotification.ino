@@ -121,15 +121,15 @@ byte sendEmail()
     if (!eRcv()) return 0;
     client.println("EHLO www.example.com");
     if (!eRcv()) return 0;
-    client.println("auth login");
+    client.println("login");
     if (!eRcv()) return 0;
 
     //Login to sender email
     // CHANGE to your base64, ASCII encoded user
-    client.println("d2FzaGVybm90aWZpY2F0aW9u"); // SMTP UserID
+    client.println("BASE64 EMAIL (SENDER)"); // SMTP UserID
     if (!eRcv()) return 0;
     // CHANGE to your base64, ASCII encoded password
-    client.println("dGI1MjNWRDAw");//  SMTP Passw
+    client.println("BASE64 EMAIL PASSWORD (SENDER)");//  SMTP Passw
     
     if (!eRcv()) return 0;
     //CHANGE TO SENDER ADDRESS
